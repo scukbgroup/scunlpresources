@@ -66,25 +66,29 @@
 
 在国际上ACL，COLING，ENMLP和NAACL是默认的四大自然语言处理顶级学术会议，其中ACL，EMNLP和NAACL都是由ACL及相应的子组织举办的。
 
-## ACL
+## [ACL]()(https://www.aclweb.org/portal)
 
 ACL的全称是**The Association for Computational Linguistics**,翻译过来是计算机语言协会，自然语言处理与计算语言学领域（以下简称NLP/CL）最权威的国际专业学会，ACL成立于1962年，是自然语言处理(NLP)领域影响力最大、最具活力的顶级国际学术组织，**每年举办一次**。这个学会主办了 NLP/CL 领域最权威的国际会议，即ACL年会。1982年和1999年，ACL分别成立了欧洲分会（**EACL**）和北美分会（**NAACL**）两个区域性分会。近年来，亚太地区在自然语言处理方面的研究进步显著，2018年7月15日，第56届ACL年会在澳大利亚墨尔本举行。开幕仪式上，ACL主席Marti Hearst正式宣布成立国际计算语言学学会亚太地区分会（**AACL**，The Asia-Pacific Chapter of Association for Computational Linguistics）。此次成立ACL亚太分会，将进一步促进亚太地区NLP相关技术和研究的发展。据悉，首届AACL会议预计在2020年举行，此后将每两年举行一次。
 
-## EMNLP
 
-EMNLP 全称是**Conference on Empirical Methods in Natural Language Processing**. EMNLP是有ACL下面的比较著名的兴趣小组（Special Interest Groups,SIGS）之一的SIGDATA(Special Interest Group on Linguistic Data&Corpus-based Approaches to Natural Language Processing)举办的。
 
-## NAACL
-
-NAACL的全称是The North American Chapter of the Association for Computational Linguistics,该会议是ACL在北美的分会，也是有ACL主办。其是有ACL下面的兴趣小组SIGNAL(special Interest Group on Natural Language Learning)举办的。其也是每年举办一次，由于NAACL是ACL在北美的分会，因此当ACL在北美举办的时候，NAACL就会停办一年。
-
-## COLING
+## [COLING](http://coling2018.org)
 
 COLING 全称是International Conference on Computational Linguistics,其由1965年创办，是由老牌的NLP学术会议组织ICCL(The International Committee on Computational Linguistics)组织的。该会议每两年举办一次。
 
 除了上述被CCF收录的会议外，在自然语言处理领域还有其他许多重要会议，分别是SemEval,LREC等。
 
-## SemEval
+## [EMNLP](http://emnlp2018.org)
+
+EMNLP 全称是**Conference on Empirical Methods in Natural Language Processing**. EMNLP是有ACL下面的比较著名的兴趣小组（Special Interest Groups,SIGS）之一的SIGDATA(Special Interest Group on Linguistic Data&Corpus-based Approaches to Natural Language Processing)举办的。
+
+## [NAACL](http://naacl.org)
+
+NAACL的全称是The North American Chapter of the Association for Computational Linguistics,该会议是ACL在北美的分会，也是有ACL主办。其是有ACL下面的兴趣小组SIGNAL(special Interest Group on Natural Language Learning)举办的。其也是每年举办一次，由于NAACL是ACL在北美的分会，因此当ACL在北美举办的时候，NAACL就会停办一年。
+
+
+
+## [SemEval](http://alt.qcri.org/semeval2019/index.php?id=tasks)
 
 SemEval,其全称是International Workshop on Semantic Evaluation,该会议有ACL的特殊兴趣小组SIGLEX进行组织，每年都会举办，国内也有很多研究机构及公司参与，如哈工大科大讯飞等,其最新的链接网址如下：<http://alt.qcri.org/semeval2019/index.php?id=tasks>
 
