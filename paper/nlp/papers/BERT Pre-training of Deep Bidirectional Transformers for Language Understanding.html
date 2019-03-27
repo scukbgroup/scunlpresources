@@ -1,0 +1,418 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>BERT Pre-training of Deep Bidirectional Transformers for Language Understanding · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../KnowledgeBase/readme.html" />
+    
+    
+    <link rel="prev" href="../readme.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../metting/summit metting.html">
+            
+                <a href="../../../metting/summit metting.html">
+            
+                    
+                    Conferences and journals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../tools/readme.html">
+            
+                <a href="../../../tools/readme.html">
+            
+                    
+                    tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../database/readme.html">
+            
+                <a href="../../../database/readme.html">
+            
+                    
+                    database
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../readme.html">
+            
+                <a href="../../readme.html">
+            
+                    
+                    paper
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../readme.html">
+            
+                <a href="../readme.html">
+            
+                    
+                    NLP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1.1" data-path="BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.html">
+            
+                <a href="BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.html">
+            
+                    
+                    BERT Pre-training of Deep Bidirectional Transformers for Language Understanding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../KnowledgeBase/readme.html">
+            
+                <a href="../../KnowledgeBase/readme.html">
+            
+                    
+                    KnowledgeBase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Intelligent Question Answering/readme.md">
+            
+                <span>
+            
+                    
+                    Intelligent Question Answering
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../knowledgeshare/readme.html">
+            
+                <span>
+            
+                    
+                    Knowledge share
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >BERT Pre-training of Deep Bidirectional Transformers for Language Understanding</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li>BERT Pre-training of Deep Bidirectional Transformers for Language Understanding</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x9879;&#x76EE;</th>
+<th>&#x5185;&#x5BB9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#x65F6;&#x95F4;</td>
+<td>2018&#x5E74;</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x4F5C;&#x8005;&#x5355;&#x4F4D;</td>
+<td>Google</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x4F5C;&#x8005;&#x4FE1;&#x606F;</td>
+<td>Jacob<br>Devlin,Ming-Wei Chang, Kenton Lee, Kristina Toutanova</td>
+</tr>
+<tr>
+<td style="text-align:left">&#x6E90;&#x7801;&#x94FE;&#x63A5;</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">&#x539F;&#x6587;&#x94FE;&#x63A5;</td>
+<td><a href="https://arxiv.org/abs/1810.04805" target="_blank">https://arxiv.org/abs/1810.04805</a></td>
+</tr>
+<tr>
+<td style="text-align:left">&#x5176;&#x4ED6;&#x89E3;&#x8BFB;</td>
+<td><a href="https://blog.csdn.net/jilrvrtrc/article/details/83829470" target="_blank">https://blog.csdn.net/jilrvrtrc/article/details/83829470</a></td>
+</tr>
+<tr>
+<td style="text-align:left">&#x5173;&#x952E;&#x8BCD;</td>
+<td>&#x9884;&#x8BAD;&#x7EC3;&#xFF0C;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;</td>
+</tr>
+</tbody>
+</table>
+<h1 id="&#x6458;&#x8981;">&#x6458;&#x8981;</h1>
+<p>&#x672C;&#x6587;&#x4F5C;&#x8005;&#x63A8;&#x51FA;&#x4E86;&#x4E00;&#x5957;&#x65B0;&#x7684;&#x8BED;&#x8A00;&#x8868;&#x8FBE;&#x6A21;&#x578B;BERT&#xFF0C;&#x5168;&#x79F0;&#x4E3A;Bidirectional Encoder Representations from Transformers&#x3002;&#x4E0E;&#x8FD1;&#x5E74;&#x6765;&#x63D0;&#x51FA;&#x7684;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#xFF0C;BERT&#x4E0D;&#x518D;&#x4EC5;&#x4EC5;&#x662F;&#x53EA;&#x5173;&#x6CE8;&#x4E00;&#x4E2A;&#x8BCD;&#x524D;&#x6587;&#x6216;&#x540E;&#x6587;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x800C;&#x662F;&#x6574;&#x4E2A;&#x6A21;&#x578B;&#x7684;&#x6240;&#x6709;&#x5C42;&#x90FD;&#x53BB;&#x5173;&#x6CE8;&#x5176;&#x6574;&#x4E2A;&gt;&#x4E0A;&#x4E0B;&#x6587;&#x7684;&#x8BED;&#x5883;&#x4FE1;&#x606F;&#x3002;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x8BC1;&#x660E;&#xFF0C;&#x4F7F;&#x7528;&#x9884;&#x8BAD;&#x7EC3;&#x8FC7;&#x7684;BERT&#x6A21;&#x578B;&#xFF0C;&#x4EC5;&#x4EC5;&#x5728;&#x540E;&#x9762;&#x518D;&#x5305;&#x4E00;&#x5C42;&#x8F93;&#x51FA;&#x5C42;&#xFF0C;&#x5E76;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x5FAE;&#x8C03;&#x8BAD;&#x7EC3;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x53D6;&#x5F97;&#x5F88;&#x4E0D;&#x9519;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x5177;&#x4F53;&#x6709;&#x591A;&#x4E0D;&#x9519;&#xFF0C;&#x90A3;&#x5C31;&#x662F;&#x5237;&#x7206;&#x4E86;NLP&#x9886;&#x57DF;&#x7684;11&#x5927;&#x4EFB;&#x52A1;&#xFF0C;&#x751A;&#x81F3;&#x6709;&#x51E0;&#x9879;&#x4EFB;&#x52A1;&#x7684;&#x51C6;&#x786E;&#x7387;&#x5DF2;&#x7ECF;&#x8D85;&#x8FC7;&#x4E86;&#x4EBA;&#x7C7B;&#x3002;</p>
+<h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1>
+<h1 id="&#x76F8;&#x5173;&#x5DE5;&#x4F5C;">&#x76F8;&#x5173;&#x5DE5;&#x4F5C;</h1>
+<h1 id="&#x6A21;&#x578B;&#x4ECB;&#x7ECD;">&#x6A21;&#x578B;&#x4ECB;&#x7ECD;</h1>
+<h1 id="&#x5B9E;&#x9A8C;&#x53CA;&#x7ED3;&#x679C;">&#x5B9E;&#x9A8C;&#x53CA;&#x7ED3;&#x679C;</h1>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x200B;      </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../readme.html" class="navigation navigation-prev " aria-label="Previous page: NLP">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../KnowledgeBase/readme.html" class="navigation navigation-next " aria-label="Next page: KnowledgeBase">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"BERT Pre-training of Deep Bidirectional Transformers for Language Understanding","level":"1.5.1.1","depth":3,"next":{"title":"KnowledgeBase","level":"1.5.2","depth":2,"path":"paper/KnowledgeBase/readme.md","ref":"paper/KnowledgeBase/readme.md","articles":[]},"previous":{"title":"NLP","level":"1.5.1","depth":2,"path":"paper/nlp/readme.md","ref":"paper/nlp/readme.md","articles":[{"title":"BERT Pre-training of Deep Bidirectional Transformers for Language Understanding","level":"1.5.1.1","depth":3,"path":"paper/nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.md","ref":"paper/nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"paper/nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.md","mtime":"2019-03-27T09:35:28.868Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-27T09:35:35.694Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

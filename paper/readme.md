@@ -4,5 +4,5 @@
 
 ### 2019
 
-- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding--ariv](../paperdata/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.md)
+- [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding--ariv](nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.html)
 
