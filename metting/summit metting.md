@@ -55,7 +55,7 @@
    <tr>
       <td></td>
       <td>CoNLL(Conference on Computational Natural Language Learnin)</td>
-      <td>每年一次</td>
+      <td>每两年一次</td>
       <td>CoNLL</td>
       <td>http://www.conll.org/</td>
    </tr>
@@ -64,9 +64,10 @@
    </tr>
 </table>
 
+
 在国际上ACL，COLING，ENMLP和NAACL是默认的四大自然语言处理顶级学术会议，其中ACL，EMNLP和NAACL都是由ACL及相应的子组织举办的。
 
-## [ACL]()(https://www.aclweb.org/portal)
+## [ACL](https://www.aclweb.org/portal)
 
 ACL的全称是**The Association for Computational Linguistics**,翻译过来是计算机语言协会，自然语言处理与计算语言学领域（以下简称NLP/CL）最权威的国际专业学会，ACL成立于1962年，是自然语言处理(NLP)领域影响力最大、最具活力的顶级国际学术组织，**每年举办一次**。这个学会主办了 NLP/CL 领域最权威的国际会议，即ACL年会。1982年和1999年，ACL分别成立了欧洲分会（**EACL**）和北美分会（**NAACL**）两个区域性分会。近年来，亚太地区在自然语言处理方面的研究进步显著，2018年7月15日，第56届ACL年会在澳大利亚墨尔本举行。开幕仪式上，ACL主席Marti Hearst正式宣布成立国际计算语言学学会亚太地区分会（**AACL**，The Asia-Pacific Chapter of Association for Computational Linguistics）。此次成立ACL亚太分会，将进一步促进亚太地区NLP相关技术和研究的发展。据悉，首届AACL会议预计在2020年举行，此后将每两年举行一次。
 
@@ -76,7 +77,7 @@ ACL的全称是**The Association for Computational Linguistics**,翻译过来是
 
 COLING 全称是International Conference on Computational Linguistics,其由1965年创办，是由老牌的NLP学术会议组织ICCL(The International Committee on Computational Linguistics)组织的。该会议每两年举办一次。
 
-除了上述被CCF收录的会议外，在自然语言处理领域还有其他许多重要会议，分别是SemEval,LREC等。
+
 
 ## [EMNLP](http://emnlp2018.org)
 
@@ -86,19 +87,19 @@ EMNLP 全称是**Conference on Empirical Methods in Natural Language Processing*
 
 NAACL的全称是The North American Chapter of the Association for Computational Linguistics,该会议是ACL在北美的分会，也是有ACL主办。其是有ACL下面的兴趣小组SIGNAL(special Interest Group on Natural Language Learning)举办的。其也是每年举办一次，由于NAACL是ACL在北美的分会，因此当ACL在北美举办的时候，NAACL就会停办一年。
 
-
+除了上述被CCF收录的会议外，在自然语言处理领域还有其他许多重要会议，分别是SemEval,LREC等。
 
 ## [SemEval](http://alt.qcri.org/semeval2019/index.php?id=tasks)
 
-SemEval,其全称是International Workshop on Semantic Evaluation,该会议有ACL的特殊兴趣小组SIGLEX进行组织，每年都会举办，国内也有很多研究机构及公司参与，如哈工大科大讯飞等,其最新的链接网址如下：<http://alt.qcri.org/semeval2019/index.php?id=tasks>
+SemEval,其全称是International Workshop on Semantic Evaluation,该会议由ACL的特殊兴趣小组SIGLEX进行组织，每年都会举办，国内也有很多研究机构及公司参与，如哈工大科大讯飞等,其最新的链接网址如下：<http://alt.qcri.org/semeval2019/index.php?id=tasks>
 
 ## LREC
 
-LREC全称是International Conference on Language Resource and Evaluation,其有欧洲语言资源组织进行ELRA(European Language Resources Association)组织
+LREC全称是International Conference on Language Resource and Evaluation,其由欧洲语言资源组织进行ELRA(European Language Resources Association)组织
 
 # NLP相关的其他国际会议
 
-除了直接与自然语言处理相关外，还有其他许多与自然语言处理相关的学术会议，包括**信息检索**，**数据挖掘**及**人工智能**领域，这些都是属于自然语言处理的应用领域。其中信息检索和数据挖掘与自然语言处理是密切相关的，主要有美国计算机学会（Association for Computing Machinery, ACM）主办，包括如下几个会议。
+除了直接与自然语言处理相关外，还有其他许多与自然语言处理相关的学术会议，包括**信息检索**，**数据挖掘**及**人工智能**领域，这些都是属于自然语言处理的应用领域。其中信息检索和数据挖掘与自然语言处理是密切相关的，主要由美国计算机学会（Association for Computing Machinery, ACM）主办，包括如下几个会议。
 
 **[SIGIR](http://sigir.org/)**,其全称是Special Interest Group on Informational Retrieval,其主要关注信息检索。
 
