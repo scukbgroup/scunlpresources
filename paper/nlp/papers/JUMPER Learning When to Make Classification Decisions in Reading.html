@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Improving Language Understanding by Generative Pre-Training · GitBook</title>
+        <title>JUMPER: Learning When to Make Classification Decisions in Reading · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Deep contextualized word representations.html" />
+    <link rel="next" href="../../KnowledgeBase/readme.html" />
     
     
-    <link rel="prev" href="BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.html" />
+    <link rel="prev" href="Deep contextualized word representations.html" />
     
 
     </head>
@@ -182,7 +182,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.1.2" data-path="Improving Language Understanding by Generative Pre-Training.html">
+        <li class="chapter " data-level="1.5.1.2" data-path="Improving Language Understanding by Generative Pre-Training.html">
             
                 <a href="Improving Language Understanding by Generative Pre-Training.html">
             
@@ -208,7 +208,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.4" data-path="JUMPER Learning When to Make Classification Decisions in Reading.html">
+        <li class="chapter active" data-level="1.5.1.4" data-path="JUMPER Learning When to Make Classification Decisions in Reading.html">
             
                 <a href="JUMPER Learning When to Make Classification Decisions in Reading.html">
             
@@ -307,7 +307,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >Improving Language Understanding by Generative Pre-Training</a>
+        <a href="../../.." >JUMPER: Learning When to Make Classification Decisions in Reading</a>
     </h1>
 </div>
 
@@ -323,7 +323,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <ul>
-<li>Improving Language Understanding by Generative Pre-Training</li>
+<li>JUMPER: Learning When to Make Classification Decisions in Reading</li>
 </ul>
 <table>
 <thead>
@@ -339,11 +339,11 @@
 </tr>
 <tr>
 <td style="text-align:left">&#x4F5C;&#x8005;&#x5355;&#x4F4D;</td>
-<td>Google</td>
+<td>Tsinghua University</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x4F5C;&#x8005;&#x4FE1;&#x606F;</td>
-<td>Jacob<br>Devlin,Ming-Wei Chang, Kenton Lee, Kristina Toutanova</td>
+<td>Xianggen Liu,Lili Mou,Haotian Gui,Zhengdong Lu,SenSong</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x6E90;&#x7801;&#x94FE;&#x63A5;</td>
@@ -351,18 +351,24 @@
 </tr>
 <tr>
 <td style="text-align:left">&#x539F;&#x6587;&#x94FE;&#x63A5;</td>
-<td><a href="https://arxiv.org/abs/1810.04805" target="_blank">https://arxiv.org/abs/1810.04805</a></td>
+<td><a href="https://arxiv.org/pdf/1807.02314.pdf" target="_blank">https://arxiv.org/pdf/1807.02314.pdf</a></td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5176;&#x4ED6;&#x89E3;&#x8BFB;</td>
-<td><a href="https://blog.csdn.net/jilrvrtrc/article/details/83829470" target="_blank">https://blog.csdn.net/jilrvrtrc/article/details/83829470</a></td>
+<td><a href="https://v.youku.com/v_show/id_XNDA4MDYzNzgwOA==.html?spm=a2h3j.8428770.3416059.1" target="_blank">&#x89C6;&#x9891;&#x94FE;&#x63A5;</a>,&#x63D0;&#x53D6;&#x5BC6;&#x7801;&#xFF1A;<strong>trsadmin</strong></td>
 </tr>
 <tr>
 <td style="text-align:left">&#x5173;&#x952E;&#x8BCD;</td>
-<td>&#x9884;&#x8BAD;&#x7EC3;&#xFF0C;&#x8FC1;&#x79FB;&#x5B66;&#x4E60;</td>
+<td>&#x6587;&#x672C;&#x5206;&#x7C7B;&#xFF0C;&#x5F3A;&#x5316;&#x51B3;&#x7B56;</td>
 </tr>
 </tbody>
 </table>
+<h1 id="&#x6458;&#x8981;">&#x6458;&#x8981;</h1>
+<p><strong>Abstract</strong>&#xFF1A;&#x5728;&#x65E9;&#x671F;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x6587;&#x672C;&#x5206;&#x7C7B;&#x662F;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#x5E76;&#x7ED3;&#x5408;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;&#xFF1B;&#x8FD1;&#x5E74;&#x6765;&#xFF0C;&#x968F;&#x7740;&#x6DF1;&#x5EA6;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x5176;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x66F4;&#x5F3A;&#x6027;&#x80FD;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x80FD;&#x7ED9;&#x662F;&#x7684;&#x6587;&#x672C;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x80FD;&#x591F;&#x63A5;&#x53D7;&#x539F;&#x59CB;&#x8F93;&#x5165;&#x5E76;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x7136;&#x800C;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x6A21;&#x578B;&#x7F3A;&#x4E4F;&#x5BF9;&#x76F8;&#x5173;&#x9884;&#x6D4B;&#x8FC7;&#x7A0B;&#x7684;&#x89E3;&#x91CA;&#x3002;&#x5728;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6846;&#x67B6;Jumper&#xFF0C;&#x8BE5;&#x6846;&#x67B6;&#x662F;&#x53D7;&#x5230;&#x539F;&#x59CB;&#x9605;&#x8BFB;&#x8FC7;&#x7A0B;&#x7684;&#x542F;&#x53D1;&#xFF0C;&#x8BE5;&#x6846;&#x67B6;&#x5C06;&#x6587;&#x672C;&#x5206;&#x7C7B;&#x4EFB;&#x52A1;&#x5F53;&#x505A;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#x3002;&#x5177;&#x4F53;&#x6765;&#x5C06;&#xFF0C;JUMPER&#x662F;&#x4E00;&#x4E2A;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x901A;&#x8FC7;&#x626B;&#x63CF;&#x6587;&#x672C;&#x8F93;&#x5165;&#x7684;&#x5E8F;&#x5217;&#x5E76;&#x5728;&#x5176;&#x671F;&#x671B;&#x770B;&#x5230;&#x7ED3;&#x679C;&#x7684;&#x65F6;&#x5019;&#x505A;&#x51FA;&#x51B3;&#x7B56;&#x3002;&#x6587;&#x672C;&#x5206;&#x7C7B;&#x7ED3;&#x679C;&#x4EE5;&#x53CA;&#x4F55;&#x65F6;&#x8FDB;&#x884C;&#x51B3;&#x7B56;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x51B3;&#x7B56;&#x8FC7;&#x7A0B;&#xFF0C;&#x5176;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x901A;&#x8FC7;&#x5F3A;&#x5316;&#x5B66;&#x4E60;&#x8BAD;&#x7EC3;&#x7684;&#x7B56;&#x7565;&#x7F51;&#x7EDC;&#x6765;&#x8FDB;&#x884C;&#x63A7;&#x5236;&#x7684;&#x3002;  &#x5728;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;&#x4E2D;&#x8868;&#x660E;&#xFF0C;JUMPER&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;&#xFF08;1&#xFF09;&#x8BE5;&#x6846;&#x67B6;&#x5728;&#x5F53;&#x5728;&#x6536;&#x96C6;&#x5230;&#x8DB3;&#x591F;&#x7684;&#x8BC1;&#x636E;&#x65F6;&#x5C31;&#x4F1A;&#x8FDB;&#x884C;&#x51B3;&#x7B56;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;30%-40%&#x7684;&#x6587;&#x672C;&#x9605;&#x8BFB;&#x65F6;&#x95F4;&#xFF0C;&#x6B64;&#x5916;&#x5176;&#x80FD;&#x53D1;&#x73B0;&#x5BF9;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x6709;&#x7528;&#x7684;&#x5173;&#x952E;&#x4FE1;&#x606F;&#x3002;&#xFF08;2&#xFF09;&#x8BE5;&#x6846;&#x67B6;&#x5728;&#x8BB8;&#x591A;benchmark&#x548C;&#x5DE5;&#x4E1A;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x90FD;&#x80FD;&#x53D6;&#x5F97;SOTA&#x7684;&#x7ED3;&#x679C;</p>
+<h1 id="1&#x7B80;&#x4ECB;">1.&#x7B80;&#x4ECB;</h1>
+<h2 id="&#x547D;&#x540D;&#x5B9E;&#x4F53;&#x8BC6;&#x522B;">&#x547D;&#x540D;&#x5B9E;&#x4F53;&#x8BC6;&#x522B;</h2>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x200B;      </p>
 
                                 
                                 </section>
@@ -390,12 +396,12 @@
 
             
                 
-                <a href="BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.html" class="navigation navigation-prev " aria-label="Previous page: BERT Pre-training of Deep Bidirectional Transformers for Language Understanding-arvix">
+                <a href="Deep contextualized word representations.html" class="navigation navigation-prev " aria-label="Previous page: Deep contextualized word representations">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Deep contextualized word representations.html" class="navigation navigation-next " aria-label="Next page: Deep contextualized word representations">
+                <a href="../../KnowledgeBase/readme.html" class="navigation navigation-next " aria-label="Next page: KnowledgeBase">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -406,7 +412,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Improving Language Understanding by Generative Pre-Training","level":"1.5.1.2","depth":3,"next":{"title":"Deep contextualized word representations","level":"1.5.1.3","depth":3,"path":"paper/nlp/papers/Deep contextualized word representations.md","ref":"paper/nlp/papers/Deep contextualized word representations.md","articles":[]},"previous":{"title":"BERT Pre-training of Deep Bidirectional Transformers for Language Understanding-arvix","level":"1.5.1.1","depth":3,"path":"paper/nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.md","ref":"paper/nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"paper/nlp/papers/Improving Language Understanding by Generative Pre-Training.md","mtime":"2019-03-28T04:02:02.481Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-28T09:17:11.088Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JUMPER: Learning When to Make Classification Decisions in Reading","level":"1.5.1.4","depth":3,"next":{"title":"KnowledgeBase","level":"1.5.2","depth":2,"path":"paper/KnowledgeBase/readme.md","ref":"paper/KnowledgeBase/readme.md","articles":[]},"previous":{"title":"Deep contextualized word representations","level":"1.5.1.3","depth":3,"path":"paper/nlp/papers/Deep contextualized word representations.md","ref":"paper/nlp/papers/Deep contextualized word representations.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"paper/nlp/papers/JUMPER Learning When to Make Classification Decisions in Reading.md","mtime":"2019-03-28T09:08:13.251Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-28T09:17:11.088Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
