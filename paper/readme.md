@@ -2,7 +2,13 @@
 
 ---
 
-### 2019
+### 2018
 
 - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding--ariv](nlp/papers/BERT Pre-training of Deep Bidirectional Transformers for Language Understanding.html)
+
+- [Improving Language Understanding by Generative Pre-Training](nlp/papers/Improving Language Understanding by Generative Pre-Training.html)
+
+- [Deep contextualized word representations](nlp/papers/Deep contextualized word representations.html)
+
+  
 
