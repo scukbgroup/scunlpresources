@@ -10,5 +10,7 @@
 
 - [Deep contextualized word representations](nlp/papers/Deep contextualized word representations.html)
 
+- [JUMPER: Learning When to Make Classification Decisions in Reading-arvix](nlp/papers/JUMPER: Learning When to Make Classification Decisions in Reading.html)
+
   
 
