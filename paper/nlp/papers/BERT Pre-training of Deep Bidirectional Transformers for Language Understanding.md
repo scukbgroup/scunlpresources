@@ -115,15 +115,106 @@
 
   ​	在构建训练集时候，在选择句子A的下一个句子时，通过随机选择下一个句子的方式来实现构建训练集。
 
-  ## 3.4 再训练流程
+  ## 3.4 预训练流程
 
-  
+  ​	BERT的预训练过程和目前已有的方法类似，其再训练语料我们使用了两部分的语料：BookCorpus(800M words)和英语维基百科(2,500M 单词)。在维基百科语料中，我们目前只提取了文本消息而忽略了列表，表格以及头等信息。在实际训练中，使用文本级别的语料比句子级别的语料可以取得更好的实验结果。为了生存训练输入序列，我们从语料库中选择了两个文本句子并将其合并成一个句子。其中第一个句子使用句子A的embedding，而第二个句子使用句子B的embedding。在生成句子的时候，句子B的embedding有50%的可能是随机选择的，用于训练模型对下一个句子的预测。两个句子合并起来的token序列长度小于512个token。句子首先使用WordPiece的方法生成输入表示并在其中随机挑选15%来隐藏掉，然后在此基础上使用LM masking模型。
 
-# 实验及结果
+  ​	在预训练中，在每个epoch中，输入句子数量为256个句子，每个epoch迭代1,000,000次，最终没3.3亿个单词上训练了差不多40个epoch. 我们使用饿了Adam优化算法，其中学习率为1e-4,b1参数为0.9，b2参数为0.999，L2范数的权重为0.01. 在每层中我们设置dropout概率为0.1，激活函数选择的是gelu。训练的损失函数LM模型的平均likelihood的和以及预测下一个句子的平均likelihood.
+
+  ​	在训练BERT<sub>base</sub>的过程中，作者在配置有4Cloud TPU<sub>s</sub>的集群上进行了训练，而BERT<sub>large</sub>则是在配置为16Cloud TP<sub>s</sub>的默契上进行了训练，每个训练都花费了4天左右完成。
+
+  ## 3.5 微调过程
+
+  ​	对于句子级别的分类任务，BERT的微调是很直接的。为了获取输入句子的固定维度的表示,BERT使用了输入句子的第一个词的最后一个隐藏层的输入*C*（R<sup>H</sup>）。在进行分类时，在bert输出的基础上在增加一个分类层，分类层的矩阵表示为*W*。 则分类结果接上一个SoftMax层后得到相应的各个类别的概率*P=softmax(CW<sup>T</sup>)*。这样所有的BERT的参数和新增的W参数一起经过微调后得到分类结果的输出。而在针对单词级别的任务中，训练过程和句子级别的有所区别。
+
+  ​	在微调训练过程中，大部分模型的参数和原来预训练的过程是一样的。除了batch size，学习率(learning rate)以及训练的epoch次数不同外。在预训练过程中，dropout的概率一直设置为0.1，而新增参数的相关设置是和任务先关的。作者在训练BERT的过程中，发现如下参数在多个任务中具有较好的表现。
+
+   - Batch size:16,32
+
+   - Learning rate(Adam):5e-5,3e-5,2e-5
+
+   - Number of epochs:3,4
+
+     在实验中，作者同时发现100k+左右的数据对于模型的参数的变化是极小的。因此微调过程是十分快速的。
+
+  ## 3.6 和OpenAIGPT的比较
+
+  ​	目前在预训练领域可以用于和BERT进行比较的是OpenAIGPT,OpenAIGPT使用从左到右的方式在大量语料上进行训练。在整体结构上BERT和OpenAIGPT是相似的，因此整体结构差异较小，但是BERT和OpenAIGPT还有其他几个方面的差别。
+
+  - BERT的训练语料是在一个BookCorpus(800M)和维基百科的文本语料中（2,500M个单词）。
+  - GPT使用的句子分隔符为[SEP]，分类器的分隔符为[CLS],并且这些只在微调过程中使用。而BERT则是学习了[SEP],[CLS]以及句子分割信息（A/B）在预训练过程中。
+  - GPT在包含32,000个单词的语料库中每个epoch训练了1M 步骤，而BERT是在128,000个单词中每个epoch训练了1M步。
+  - GPT在所有的微调步骤中都使用了相同的学习率5e-5,而BERT的学习率则是根据特定任务需求设置来进行微调的。
+
+# 4.实验及结果
+
+​	实验部分主要叙述BERT在11项自然语言预处理任务中 的微调过程。
+
+## 4.1 GLUE数据集
+
+​	GLUE数据集是一个通用的自然语言理解评估数据集，用于评估对自然语言的理解任务。GLUE数据集包含多个子数据集。
+
+ - **MNLI** 多类型的自然语言推理任务数据集。
+ - **QQP** QQP问题对是一个二进制分类任务，用于确定连个问题的语义是否是相等的。
+ - **QNLI** 是一个自然语言推理任务数据集，其中的正样本是一些问题，答案对的句子则是来自于同一个段落的句子，其并不形成问题-答案对的形式。
+ - **SST-2** 是一个有斯坦福构建的二分类任务的数据集，是从一些电影评论中抽取出来的句子并且包含人工的标注信息。
+ - **CoLA** 该数据集是一个语言课接受性的二分类语料库，其预测的任务是一个英语句子在语言上是否是可以接受的。
+ - **STS-B** 该数据集是一个文本语义相似性数据集，其收集与一些新闻标题和其他来源，其预测任务是预测两个句子在语义上的多大的相似性。
+ - **MRPC**,该数据集微软研究解释语料库由自动提取的句子对组成来自在线新闻来源，带有人工注释判断两个句子的语义是否一致相等的
+ - **RTE** 该数据集是一个二分类的任务，其任务目标类似于MNLI,但是其训练数据较少。
+ - **WNLI** ,Winograd NLI是一个小型的自然语言推断数据集，在GLUE的网页中指出该数据集在构造上存在一定我的问题。因此在模型中排除了OpenAIGPT。
+
+### 4.1.1 GLUE数据集的实验结果
+
+​	在针对GLUE数据集的微调训练中，使用了每个句子的第一个输入[CLS]的最后一个隐藏层输出*C* 以及分类矩阵*W*相结合并经过softmax分了的方式来进行微调。在每个任务中，使用的学习率为5e-5,4e-43e-5等。实验结果如下图所示![实验结果](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\4.png)
+
+​	从实验结果可以，BERT相比较于OpenAI GPT,BiLSTM+ELMo+Attn等模型都有很大的提升，其中BERT<sub>large</sub>和BERT<sub>base</sub>比起来有更多的提升。
+
+## 4.2 SQuAD v1.1
+
+​	SQqAD 数据集是一个由斯坦福收集的包含100k的问题/答案对数据集。该数据集是通过给定一个问题以及维基百科中包含该答案的段落，该任务从段落中预测出相应的答案。其简单示例如下：
+
+![squad数据集](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\5.png)
+
+​	在该类型的任务中，和传统的句子分类任务有明显的不同，在对BERT进行微调的任务中，将问题和答案都表示成两个独立的序列。其中问题使用A embedding，而答案使用B embedding。在训练中，针对第i个单词，通过将其bert输出的词嵌表示和一个概率转移矩阵T相乘后利用softmax输出得到该但是是否是答案开始的概率。针对答案的结束，也是使用同样的方式预测某个词是否是答案的结果，而训练的目标是最大化正确开始位置和结束位置的释然概率。该过程的示意图如图所示：
+
+![SQuAD](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\6.png)
+
+​	在该任务中，训练时使用的额学习率为5e-5,batch_size 为32，训练迭代次数为3个epoch.实验结果如下：
+
+![实验结果](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\7.png)
+
+​	从实验结果中可以看到，BERT去了的最好的结果，其中BERT<sub>large</sub> 结合一个单个模型的效果比传统的方法1.5的F1值的提升。
+
+## 命名实体识别
+
+​	为了评估bert在序列标注任务中的性能，论文还基于bert在CoNLL 2003的命名实体识别任务中进行了测试。该数据集包含200K的训练数据集，其中实体类别为Person（人物）,Organization（组织）,Location（地点），Miscellaneous（其他项）和Other(非实体词)。
+
+​	在进行命名实体识别的微调时时，针对每个词，使用其最后一个隐藏状态*C* 经过和一个转移矩阵*T*转移后在利用一个分类网络来进行分类，微调的过程如下图所示：
+
+![ner](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\8.png)
+
+​	实验结果如图所示：
+
+![ner-result](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\9.png)
+
+​	从实验结果可以看出，BERT也去了的SOTA的实验结果。
+
+## 4.4 常识推理任务（SWAG 数据集）
+
+​	该任务是在一个有对抗生成网络生成的数据集（包含113k句子）上进行的实验任务，其任务是给定一个视频字幕中的一句话，推断最由可能的后续情节。其简单示意如下图所示：
+
+![swag](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\10.png)
+
+​		该任务的微调过程和GLUE是类似的，在每个例子中，我们构建四个输入句子，其中每个都是一个数据句子A和可能后续进展B的结合。我们同样也引入一个转移矩阵*T*,通过将每个输入和矩阵*T*进行相乘后利用softmax来预测概率。在进行微调训练中，使用的学习速率为2e-5,总共迭代三个epoch.其对比的BaseLine为ESIM+Glove和ESIM+ELMo.实验结果如下：
+
+![result](BERT Pre-training of Deep Bidirectional Transformers for Language Understanding\11.png)
+
+​	从实验结果中，可以看出该模型可以取得较好的实验结果。此外作者还对模型的一些相关参数进行了分析并进行了实验讨论。
 
 # 总结
 
-
+​	最近的经验改进表明，由于转移学习与语言模型已经证明，丰富，无监督的预培训是许多语言理解系统的一个组成部分。特别是，这些结果使得即使是低资源任务也能从非常深的单向架构中受益。我们的主要贡献是将这些发现进一步推广到深层双向体系结构中，使相同的预先培训的模型能够成功地处理广泛的NLP任务。虽然经验结果很强，但在某些情况下，超过了人类的表现，未来的重要工作是研究语言现象。
 
 
 
